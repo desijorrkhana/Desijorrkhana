@@ -186,33 +186,54 @@ flipBtn.addEventListener('click',async()=>{facing=facing==='user'?'environment':
 
 function countdown(){return new Promise(res=>{let n=3;veil.style.display='flex';spinner.style.display='none';veilTitle.style.display='none';veilMsg.style.display='none';const cd=document.createElement('div');cd.className='countdown';veil.appendChild(cd);cd.textContent=n;const t=setInterval(()=>{n--;if(n<=0){clearInterval(t);cd.remove();veil.style.display='none';veilTitle.style.display='';veilMsg.style.display='';res()}else cd.textContent=n},1000)})}
 
-const C={NOSE:0,L_SH:11,R_SH:12,L_WR:15,R_WR:16};
+const C={NOSE:0,L_SH:11,R_SH:12,L_EL:13,R_EL:14,L_WR:15,R_WR:16};
 const avg=(a,b)=>(a+b)/2;
 function loop(){if(!running)return;if(video.currentTime!==lastT){lastT=video.currentTime;const r=landmarker.detectForVideo(video,performance.now());lastLandmarks=(r.landmarks&&r.landmarks.length)?r.landmarks[0]:null;draw(r);if(counting&&phase==='active'&&lastLandmarks)detect(lastLandmarks)}rafId=requestAnimationFrame(loop)}
-const DECAY=0.0024,REFRAC_MS=380;
-function sensConfig(){const v=+sens.value;return {minr:0.12-(v-1)*0.007,bandf:0.30-(v-1)*0.0156}}
-function mkTrack(){return {min:1,max:0,sy:0,state:'down',init:false,tlast:-99999}}
+/* JORR ENGINE v3 - elbow-based, rhythm-locked. Elbow visibility ~0.8 vs wrist ~0.57 on real footage;
+   absolute amplitude floor kills idle jitter; rhythm gate recovers occlusion-weakened swings.
+   Validated on 07-Jul rooftop video: 0 phantom counts, L=65/R=62 (true 63/63). */
+const EMA_MS=110,REFRAC_MS=500,VIS_TH=0.5,GAP_MS=300,RHYTHM_TOL=0.4,RHYTHM_AMP=0.55;
+function sensConfig(){const v=+sens.value;return {minAmp:Math.max(0.02,0.075-(v-1)*0.00555)}}
+function mkTrack(){return {ema:null,tseen:-1e9,trough:null,dirn:0,tlast:-1e9,periods:[]}}
 let trkL=mkTrack(),trkR=mkTrack(),trkC=mkTrack();
 function resetTracks(){trkL=mkTrack();trkR=mkTrack();trkC=mkTrack();pendingUp=null}
 function stepTrack(t,y,now){
-  if(!t.init){t.min=y;t.max=y;t.sy=y;t.init=true;return false}
-  t.sy=t.sy*0.5+y*0.5;const yy=t.sy;
-  if(yy<t.min)t.min=yy;else t.min=Math.min(t.min+DECAY,1);
-  if(yy>t.max)t.max=yy;else t.max=Math.max(t.max-DECAY,0);
-  const range=t.max-t.min;const{minr,bandf}=sensConfig();
-  if(range<minr)return false;
-  const mid=(t.min+t.max)/2,band=range*bandf;
-  if(t.state==='down'&&yy<mid-band){t.state='up';if(now-t.tlast>=REFRAC_MS){t.tlast=now;return true}return false}
-  if(t.state==='up'&&yy>mid+band){t.state='down'}
-  return false;
+  if(t.ema===null||now-t.tseen>GAP_MS){t.ema=y;t.trough=y;t.dirn=0;t.tseen=now;return false}
+  const dt=now-t.tseen;t.tseen=now;
+  const a=1-Math.exp(-dt/EMA_MS);
+  const prev=t.ema;t.ema+=a*(y-t.ema);const s=t.ema;
+  const d=s<prev-1e-5?-1:(s>prev+1e-5?1:t.dirn);
+  if(t.dirn>=0&&d<0)t.trough=prev;
+  let fired=false;
+  if(t.dirn<=0&&d>0){
+    const exc=(t.trough??prev)-prev;
+    const{minAmp}=sensConfig();
+    let ok=exc>=minAmp;
+    if(!ok&&exc>=minAmp*RHYTHM_AMP&&t.periods.length>=3){
+      const p=t.periods.slice(-5).sort((x,y2)=>x-y2);const med=p[p.length>>1];
+      if(Math.abs(now-t.tlast-med)<=RHYTHM_TOL*med)ok=true;
+    }
+    if(ok&&now-t.tlast>=REFRAC_MS){
+      if(t.tlast>-1e8){t.periods.push(now-t.tlast);if(t.periods.length>12)t.periods.shift()}
+      t.tlast=now;fired=true;
+    }
+  }
+  t.dirn=d;
+  return fired;
 }
 function detect(lm){
   const now=performance.now();
-  const lVis=lm[C.L_WR].visibility??1,rVis=lm[C.R_WR].visibility??1;
-  if(mode==='single'){if(Math.min(lVis,rVis)<0.4)return;const y=Math.min(lm[C.L_WR].y,lm[C.R_WR].y);if(stepTrack(trkC,y,now)){count++;render(true)}return}
+  const lVis=lm[C.L_EL].visibility??1,rVis=lm[C.R_EL].visibility??1;
+  if(mode==='single'){
+    if(Math.max(lVis,rVis)<VIS_TH)return;
+    const y=Math.min(lVis>=VIS_TH?lm[C.L_EL].y:1,rVis>=VIS_TH?lm[C.R_EL].y:1);
+    if(stepTrack(trkC,y,now)){count++;state='up';render(true)}else if(trkC.dirn>0)state='down';
+    return;
+  }
   let upL=false,upR=false;
-  if(lVis>=0.4)upL=stepTrack(trkL,lm[C.L_WR].y,now);
-  if(rVis>=0.4)upR=stepTrack(trkR,lm[C.R_WR].y,now);
+  if(lVis>=VIS_TH)upL=stepTrack(trkL,lm[C.L_EL].y,now);
+  if(rVis>=VIS_TH)upR=stepTrack(trkR,lm[C.R_EL].y,now);
+  state=(trkL.dirn<0||trkR.dirn<0)?'up':'down';
   if(mode==='double'){const n=(upL?1:0)+(upR?1:0);if(n){count+=n;render(true)}return}
   if(!upL&&!upR)return;
   if(upL&&upR){count++;render(true);pendingUp=now;return}
@@ -221,7 +242,7 @@ function detect(lm){
 function render(p){countEl.textContent=count;if(p){countEl.classList.add('pulse');setTimeout(()=>countEl.classList.remove('pulse'),120)}}
 
 const BONES=[[11,12],[11,13],[13,15],[12,14],[14,16],[11,23],[12,24],[23,24],[23,25],[25,27],[24,26],[26,28]];
-function draw(r){ctx.clearRect(0,0,canvas.width,canvas.height);if(!r.landmarks||!r.landmarks.length)return;const lm=r.landmarks[0],W=canvas.width,H=canvas.height;ctx.lineWidth=Math.max(3,W*0.006);ctx.strokeStyle='rgba(212,160,44,.85)';for(const[a,b]of BONES){if((lm[a].visibility??1)<0.4||(lm[b].visibility??1)<0.4)continue;ctx.beginPath();ctx.moveTo(lm[a].x*W,lm[a].y*H);ctx.lineTo(lm[b].x*W,lm[b].y*H);ctx.stroke()}for(const i of[15,16]){if((lm[i].visibility??1)<0.4)continue;ctx.beginPath();ctx.arc(lm[i].x*W,lm[i].y*H,Math.max(7,W*0.014),0,7);ctx.fillStyle=state==='up'?'#C8401B':'#E8C46A';ctx.fill()}}
+function draw(r){ctx.clearRect(0,0,canvas.width,canvas.height);if(!r.landmarks||!r.landmarks.length)return;const lm=r.landmarks[0],W=canvas.width,H=canvas.height;ctx.lineWidth=Math.max(3,W*0.006);ctx.strokeStyle='rgba(212,160,44,.85)';for(const[a,b]of BONES){if((lm[a].visibility??1)<0.4||(lm[b].visibility??1)<0.4)continue;ctx.beginPath();ctx.moveTo(lm[a].x*W,lm[a].y*H);ctx.lineTo(lm[b].x*W,lm[b].y*H);ctx.stroke()}for(const i of[13,14]){if((lm[i].visibility??1)<0.4)continue;ctx.beginPath();ctx.arc(lm[i].x*W,lm[i].y*H,Math.max(7,W*0.014),0,7);ctx.fillStyle=state==='up'?'#C8401B':'#E8C46A';ctx.fill()}}
 
 /* ---------- workout (auto-count + sets + pause + breaks) ---------- */
 function updateTimers(){
