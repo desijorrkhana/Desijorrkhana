@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "scenes": [
+    {
+      "id": "s1_hook",
+      "start_seconds": 0.0,
+      "end_seconds": 4.59,
+      "type": "text_card",
+      "script_section_id": "s1_hook",
+      "description": "Remotion hero_title scene, brand palette mitti/brass/sindoor/bone, narration: In the akhada, every jorr counts. But who's counting?"
+    },
+    {
+      "id": "s2_problem",
+      "start_seconds": 4.59,
+      "end_seconds": 8.7,
+      "type": "text_card",
+      "script_section_id": "s2_problem",
+      "description": "Remotion text_card scene, brand palette mitti/brass/sindoor/bone, narration: You push through your set, and lose the count halfway."
+    },
+    {
+      "id": "s3_solution",
+      "start_seconds": 8.7,
+      "end_seconds": 14.8,
+      "type": "text_card",
+      "script_section_id": "s3_solution",
+      "description": "Remotion callout scene, brand palette mitti/brass/sindoor/bone, narration: Jorr Counter watches you through your camera, and counts eve"
+    },
+    {
+      "id": "s4_features",
+      "start_seconds": 14.8,
+      "end_seconds": 20.2,
+      "type": "text_card",
+      "script_section_id": "s4_features",
+      "description": "Remotion comparison scene, brand palette mitti/brass/sindoor/bone, narration: Track your sets, take timed breaks, and share your scorecard"
+    },
+    {
+      "id": "s5_stat",
+      "start_seconds": 20.2,
+      "end_seconds": 25.49,
+      "type": "text_card",
+      "script_section_id": "s5_stat",
+      "description": "Remotion stat_card scene, brand palette mitti/brass/sindoor/bone, narration: No taps. No wearables. Just you, and your jorr."
+    },
+    {
+      "id": "s6_cta",
+      "start_seconds": 25.49,
+      "end_seconds": 31.76,
+      "type": "text_card",
+      "script_section_id": "s6_cta",
+      "description": "Remotion hero_title scene, brand palette mitti/brass/sindoor/bone, narration: Desi Jorr Khana. Open it in your browser, and start counting"
+    }
+  ]
+}

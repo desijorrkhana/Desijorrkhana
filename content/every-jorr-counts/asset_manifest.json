@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "assets": [
+    {
+      "id": "s1_hook_vo",
+      "type": "narration",
+      "path": "assets/audio/s1_hook.wav",
+      "source_tool": "piper_tts",
+      "scene_id": "s1_hook"
+    },
+    {
+      "id": "s2_problem_vo",
+      "type": "narration",
+      "path": "assets/audio/s2_problem.wav",
+      "source_tool": "piper_tts",
+      "scene_id": "s2_problem"
+    },
+    {
+      "id": "s3_solution_vo",
+      "type": "narration",
+      "path": "assets/audio/s3_solution.wav",
+      "source_tool": "piper_tts",
+      "scene_id": "s3_solution"
+    },
+    {
+      "id": "s4_features_vo",
+      "type": "narration",
+      "path": "assets/audio/s4_features.wav",
+      "source_tool": "piper_tts",
+      "scene_id": "s4_features"
+    },
+    {
+      "id": "s5_stat_vo",
+      "type": "narration",
+      "path": "assets/audio/s5_stat.wav",
+      "source_tool": "piper_tts",
+      "scene_id": "s5_stat"
+    },
+    {
+      "id": "s6_cta_vo",
+      "type": "narration",
+      "path": "assets/audio/s6_cta.wav",
+      "source_tool": "piper_tts",
+      "scene_id": "s6_cta"
+    },
+    {
+      "id": "narration_full",
+      "type": "narration",
+      "path": "assets/audio/narration_full.wav",
+      "source_tool": "audio_mixer",
+      "scene_id": "all"
+    }
+  ]
+}

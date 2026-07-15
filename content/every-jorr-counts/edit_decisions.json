@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "render_runtime": "remotion",
+  "cuts": [
+    {
+      "id": "hook",
+      "source": "remotion:hero_title",
+      "in_seconds": 0.0,
+      "out_seconds": 4.59
+    },
+    {
+      "id": "problem",
+      "source": "remotion:text_card",
+      "in_seconds": 4.59,
+      "out_seconds": 8.7
+    },
+    {
+      "id": "solution",
+      "source": "remotion:callout",
+      "in_seconds": 8.7,
+      "out_seconds": 14.8
+    },
+    {
+      "id": "features",
+      "source": "remotion:comparison",
+      "in_seconds": 14.8,
+      "out_seconds": 20.2
+    },
+    {
+      "id": "stat",
+      "source": "remotion:stat_card",
+      "in_seconds": 20.2,
+      "out_seconds": 25.49
+    },
+    {
+      "id": "cta",
+      "source": "remotion:hero_title",
+      "in_seconds": 25.49,
+      "out_seconds": 31.76
+    }
+  ]
+}

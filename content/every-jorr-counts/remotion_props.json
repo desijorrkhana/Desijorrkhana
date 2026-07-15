@@ -1,0 +1,453 @@
+{
+  "cuts": [
+    {
+      "id": "hook",
+      "source": "",
+      "type": "hero_title",
+      "in_seconds": 0.0,
+      "out_seconds": 4.59,
+      "text": "DESIJORRKHANA",
+      "heroSubtitle": "JORR COUNTER \u00b7 \u0905\u0916\u093e\u0921\u093c\u0947 \u0915\u093e \u0939\u093f\u0938\u093e\u092c",
+      "accentColor": "#D4A02C"
+    },
+    {
+      "id": "problem",
+      "source": "",
+      "type": "text_card",
+      "in_seconds": 4.59,
+      "out_seconds": 8.7,
+      "text": "Lost count again?",
+      "subtitle": "Deep in the set, the number slips.",
+      "accentColor": "#C8401B"
+    },
+    {
+      "id": "solution",
+      "source": "",
+      "type": "callout",
+      "in_seconds": 8.7,
+      "out_seconds": 14.8,
+      "callout_type": "tip",
+      "title": "Hands-free counting",
+      "text": "Point your camera. Do your jorr. Every rep is counted for you.",
+      "accentColor": "#D4A02C"
+    },
+    {
+      "id": "features",
+      "source": "",
+      "type": "comparison",
+      "in_seconds": 14.8,
+      "out_seconds": 20.2,
+      "title": "Built for the khana",
+      "leftLabel": "Purana tareeqa",
+      "leftValue": "Chalk marks & guesswork",
+      "rightLabel": "Jorr Counter",
+      "rightValue": "Sets \u00b7 breaks \u00b7 scorecard",
+      "accentColor": "#D4A02C"
+    },
+    {
+      "id": "stat",
+      "source": "",
+      "type": "stat_card",
+      "in_seconds": 20.2,
+      "out_seconds": 25.49,
+      "stat": "0 taps",
+      "subtitle": "No wearables. No typing. Just you and your jorr.",
+      "accentColor": "#C8401B"
+    },
+    {
+      "id": "cta",
+      "source": "",
+      "type": "hero_title",
+      "in_seconds": 25.49,
+      "out_seconds": 31.76,
+      "text": "Every jorr counts.",
+      "heroSubtitle": "DesiJorrKhana \u2014 free in your browser",
+      "accentColor": "#D4A02C"
+    }
+  ],
+  "overlays": [
+    {
+      "type": "section_title",
+      "text": "How it works",
+      "accentColor": "#D4A02C",
+      "in_seconds": 9.0,
+      "out_seconds": 14.5
+    },
+    {
+      "type": "section_title",
+      "text": "Features",
+      "accentColor": "#D4A02C",
+      "in_seconds": 15.100000000000001,
+      "out_seconds": 19.9
+    }
+  ],
+  "captions": [
+    {
+      "word": "In",
+      "startMs": 600,
+      "endMs": 988
+    },
+    {
+      "word": "the",
+      "startMs": 988,
+      "endMs": 1376
+    },
+    {
+      "word": "akhada,",
+      "startMs": 1376,
+      "endMs": 1764
+    },
+    {
+      "word": "every",
+      "startMs": 1764,
+      "endMs": 2152
+    },
+    {
+      "word": "jorr",
+      "startMs": 2152,
+      "endMs": 2540
+    },
+    {
+      "word": "counts.",
+      "startMs": 2540,
+      "endMs": 2928
+    },
+    {
+      "word": "But",
+      "startMs": 2928,
+      "endMs": 3316
+    },
+    {
+      "word": "who's",
+      "startMs": 3316,
+      "endMs": 3704
+    },
+    {
+      "word": "counting?",
+      "startMs": 3704,
+      "endMs": 4092
+    },
+    {
+      "word": "You",
+      "startMs": 5193,
+      "endMs": 5493
+    },
+    {
+      "word": "push",
+      "startMs": 5493,
+      "endMs": 5794
+    },
+    {
+      "word": "through",
+      "startMs": 5794,
+      "endMs": 6095
+    },
+    {
+      "word": "your",
+      "startMs": 6095,
+      "endMs": 6395
+    },
+    {
+      "word": "set,",
+      "startMs": 6395,
+      "endMs": 6696
+    },
+    {
+      "word": "and",
+      "startMs": 6696,
+      "endMs": 6997
+    },
+    {
+      "word": "lose",
+      "startMs": 6997,
+      "endMs": 7297
+    },
+    {
+      "word": "the",
+      "startMs": 7297,
+      "endMs": 7598
+    },
+    {
+      "word": "count",
+      "startMs": 7598,
+      "endMs": 7899
+    },
+    {
+      "word": "halfway.",
+      "startMs": 7899,
+      "endMs": 8200
+    },
+    {
+      "word": "Jorr",
+      "startMs": 9300,
+      "endMs": 9633
+    },
+    {
+      "word": "Counter",
+      "startMs": 9633,
+      "endMs": 9966
+    },
+    {
+      "word": "watches",
+      "startMs": 9966,
+      "endMs": 10300
+    },
+    {
+      "word": "you",
+      "startMs": 10300,
+      "endMs": 10633
+    },
+    {
+      "word": "through",
+      "startMs": 10633,
+      "endMs": 10967
+    },
+    {
+      "word": "your",
+      "startMs": 10967,
+      "endMs": 11300
+    },
+    {
+      "word": "camera,",
+      "startMs": 11300,
+      "endMs": 11634
+    },
+    {
+      "word": "and",
+      "startMs": 11634,
+      "endMs": 11967
+    },
+    {
+      "word": "counts",
+      "startMs": 11967,
+      "endMs": 12301
+    },
+    {
+      "word": "every",
+      "startMs": 12301,
+      "endMs": 12634
+    },
+    {
+      "word": "rep",
+      "startMs": 12634,
+      "endMs": 12968
+    },
+    {
+      "word": "for",
+      "startMs": 12968,
+      "endMs": 13301
+    },
+    {
+      "word": "you.",
+      "startMs": 13301,
+      "endMs": 13635
+    },
+    {
+      "word": "Hands",
+      "startMs": 13635,
+      "endMs": 13968
+    },
+    {
+      "word": "free.",
+      "startMs": 13968,
+      "endMs": 14302
+    },
+    {
+      "word": "Track",
+      "startMs": 15402,
+      "endMs": 15732
+    },
+    {
+      "word": "your",
+      "startMs": 15732,
+      "endMs": 16062
+    },
+    {
+      "word": "sets,",
+      "startMs": 16062,
+      "endMs": 16393
+    },
+    {
+      "word": "take",
+      "startMs": 16393,
+      "endMs": 16723
+    },
+    {
+      "word": "timed",
+      "startMs": 16723,
+      "endMs": 17054
+    },
+    {
+      "word": "breaks,",
+      "startMs": 17054,
+      "endMs": 17384
+    },
+    {
+      "word": "and",
+      "startMs": 17384,
+      "endMs": 17715
+    },
+    {
+      "word": "share",
+      "startMs": 17715,
+      "endMs": 18045
+    },
+    {
+      "word": "your",
+      "startMs": 18045,
+      "endMs": 18376
+    },
+    {
+      "word": "scorecard",
+      "startMs": 18376,
+      "endMs": 18706
+    },
+    {
+      "word": "with",
+      "startMs": 18706,
+      "endMs": 19037
+    },
+    {
+      "word": "the",
+      "startMs": 19037,
+      "endMs": 19367
+    },
+    {
+      "word": "khana.",
+      "startMs": 19367,
+      "endMs": 19698
+    },
+    {
+      "word": "No",
+      "startMs": 20798,
+      "endMs": 21263
+    },
+    {
+      "word": "taps.",
+      "startMs": 21263,
+      "endMs": 21728
+    },
+    {
+      "word": "No",
+      "startMs": 21728,
+      "endMs": 22193
+    },
+    {
+      "word": "wearables.",
+      "startMs": 22193,
+      "endMs": 22658
+    },
+    {
+      "word": "Just",
+      "startMs": 22658,
+      "endMs": 23124
+    },
+    {
+      "word": "you,",
+      "startMs": 23124,
+      "endMs": 23589
+    },
+    {
+      "word": "and",
+      "startMs": 23589,
+      "endMs": 24054
+    },
+    {
+      "word": "your",
+      "startMs": 24054,
+      "endMs": 24519
+    },
+    {
+      "word": "jorr.",
+      "startMs": 24519,
+      "endMs": 24985
+    },
+    {
+      "word": "Desi",
+      "startMs": 26085,
+      "endMs": 26437
+    },
+    {
+      "word": "Jorr",
+      "startMs": 26437,
+      "endMs": 26789
+    },
+    {
+      "word": "Khana.",
+      "startMs": 26789,
+      "endMs": 27142
+    },
+    {
+      "word": "Open",
+      "startMs": 27142,
+      "endMs": 27494
+    },
+    {
+      "word": "it",
+      "startMs": 27494,
+      "endMs": 27846
+    },
+    {
+      "word": "in",
+      "startMs": 27846,
+      "endMs": 28199
+    },
+    {
+      "word": "your",
+      "startMs": 28199,
+      "endMs": 28551
+    },
+    {
+      "word": "browser,",
+      "startMs": 28551,
+      "endMs": 28903
+    },
+    {
+      "word": "and",
+      "startMs": 28903,
+      "endMs": 29256
+    },
+    {
+      "word": "start",
+      "startMs": 29256,
+      "endMs": 29608
+    },
+    {
+      "word": "counting.",
+      "startMs": 29608,
+      "endMs": 29961
+    }
+  ],
+  "audio": {
+    "narration": {
+      "src": "audio/narration_full.wav",
+      "volume": 1.0
+    }
+  },
+  "themeConfig": {
+    "primaryColor": "#D4A02C",
+    "accentColor": "#C8401B",
+    "backgroundColor": "#15100B",
+    "surfaceColor": "#2A2018",
+    "textColor": "#EDE6D6",
+    "mutedTextColor": "#9C9078",
+    "headingFont": "Teko",
+    "bodyFont": "Mukta",
+    "monoFont": "Fira Code",
+    "chartColors": [
+      "#D4A02C",
+      "#C8401B",
+      "#E8C46A",
+      "#9C9078",
+      "#EDE6D6"
+    ],
+    "springConfig": {
+      "damping": 14,
+      "stiffness": 90,
+      "mass": 1
+    },
+    "transitionDuration": 0.3,
+    "captionHighlightColor": "#D4A02C",
+    "captionBackgroundColor": "rgba(21, 16, 11, 0.78)"
+  }
+}

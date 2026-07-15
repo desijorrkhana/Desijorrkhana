@@ -1,0 +1,101 @@
+{
+  "version": "1.0",
+  "concept_options": [
+    {
+      "id": "c1",
+      "title": "Every Jorr Counts (brand promo)",
+      "hook": "In the akhada, every jorr counts. But who's counting?",
+      "narrative_structure": "problem_solution",
+      "visual_approach": "flat motion graphics in DesiJorrKhana's mitti/brass/sindoor palette; typed Remotion scenes with word-level captions",
+      "target_duration_seconds": 32,
+      "why_this_works": "explains the product in one sitting, matches the app's visual identity, zero-key producible"
+    },
+    {
+      "id": "c2",
+      "title": "What is a Jorr? (culture explainer)",
+      "hook": "Before gyms had mirrors, akhadas had mud.",
+      "narrative_structure": "timeline",
+      "visual_approach": "documentary-style with archive stills (needs stock footage sourcing)",
+      "target_duration_seconds": 60,
+      "why_this_works": "shareable culture content that builds the brand beyond the tool"
+    },
+    {
+      "id": "c3",
+      "title": "Set Card Flex (social loop)",
+      "hook": "POV: your scorecard after morning jorr.",
+      "narrative_structure": "story",
+      "visual_approach": "kinetic typography (HyperFrames) \u2014 vertical 9:16",
+      "target_duration_seconds": 15,
+      "why_this_works": "made for shares; but Explainer composition is 16:9 today, vertical needs new composition work"
+    }
+  ],
+  "selected_concept": {
+    "concept_id": "c1",
+    "rationale": "directly serves the product, fully producible with the zero-key toolchain available right now. animation_mode: remotion_templated; audio_architecture: single_narrator; reuse_strategy: brand palette tokens + section_title overlay family reused across scenes."
+  },
+  "production_plan": {
+    "pipeline": "animation",
+    "render_runtime": "remotion",
+    "stages": [
+      {
+        "stage": "script",
+        "tools": [],
+        "approach": "6 narration beats, ~75 words, animation-friendly"
+      },
+      {
+        "stage": "assets",
+        "tools": [
+          {
+            "tool_name": "tts_selector",
+            "role": "narration via piper_tts",
+            "available": true
+          }
+        ],
+        "approach": "per-scene Piper WAVs; timings measured with ffprobe drive the scene plan"
+      },
+      {
+        "stage": "edit",
+        "tools": [],
+        "approach": "scene in/out from narration durations + word-level caption track"
+      },
+      {
+        "stage": "compose",
+        "tools": [
+          {
+            "tool_name": "video_compose",
+            "role": "Remotion Explainer render",
+            "available": true
+          }
+        ],
+        "approach": "npx remotion render, h264 1920x1080@30"
+      }
+    ],
+    "delivery_promise": {
+      "promise_type": "motion_led",
+      "motion_required": true,
+      "tone_mode": "energetic",
+      "quality_floor": "presentable"
+    },
+    "decision_log_ref": "/home/user/OpenMontage/projects/every-jorr-counts/decision_log.json"
+  },
+  "cost_estimate": {
+    "total_estimated_usd": 0.0,
+    "budget_verdict": "within_budget",
+    "line_items": [
+      {
+        "tool": "piper_tts",
+        "operation": "6 narration segments",
+        "estimated_usd": 0.0
+      },
+      {
+        "tool": "remotion",
+        "operation": "~980 frame render",
+        "estimated_usd": 0.0
+      }
+    ]
+  },
+  "approval": {
+    "status": "approved",
+    "user_notes": "pre-authorized autonomous run; see decision_log d-001"
+  }
+}

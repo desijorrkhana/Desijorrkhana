@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "title": "Every Jorr Counts \u2014 Jorr Counter by DesiJorrKhana",
+  "total_duration_seconds": 31.76,
+  "sections": [
+    {
+      "id": "s1_hook",
+      "text": "In the akhada, every jorr counts. But who's counting?",
+      "start_seconds": 0.0,
+      "end_seconds": 4.59,
+      "label": "DESIJORRKHANA \u2014 JORR COUNTER \u00b7 \u0905\u0916\u093e\u0921\u093c\u0947 \u0915\u093e \u0939\u093f\u0938\u093e\u092c"
+    },
+    {
+      "id": "s2_problem",
+      "text": "You push through your set, and lose the count halfway.",
+      "start_seconds": 4.59,
+      "end_seconds": 8.7,
+      "label": "Lost count again?"
+    },
+    {
+      "id": "s3_solution",
+      "text": "Jorr Counter watches you through your camera, and counts every rep for you. Hands free.",
+      "start_seconds": 8.7,
+      "end_seconds": 14.8,
+      "label": "Hands-free counting"
+    },
+    {
+      "id": "s4_features",
+      "text": "Track your sets, take timed breaks, and share your scorecard with the khana.",
+      "start_seconds": 14.8,
+      "end_seconds": 20.2,
+      "label": "Purana tareeqa vs Jorr Counter"
+    },
+    {
+      "id": "s5_stat",
+      "text": "No taps. No wearables. Just you, and your jorr.",
+      "start_seconds": 20.2,
+      "end_seconds": 25.49,
+      "label": "0 taps"
+    },
+    {
+      "id": "s6_cta",
+      "text": "Desi Jorr Khana. Open it in your browser, and start counting.",
+      "start_seconds": 25.49,
+      "end_seconds": 31.76,
+      "label": "Every jorr counts."
+    }
+  ]
+}

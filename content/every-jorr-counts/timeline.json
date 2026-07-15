@@ -1,0 +1,62 @@
+[
+  {
+    "name": "s1_hook",
+    "text": "In the akhada, every jorr counts. But who's counting?",
+    "path": "/home/user/OpenMontage/projects/every-jorr-counts/assets/audio/s1_hook.wav",
+    "duration": 3.493,
+    "scene_in": 0.0,
+    "narr_start": 0.6,
+    "narr_end": 4.093,
+    "scene_out": 4.59
+  },
+  {
+    "name": "s2_problem",
+    "text": "You push through your set, and lose the count halfway.",
+    "path": "/home/user/OpenMontage/projects/every-jorr-counts/assets/audio/s2_problem.wav",
+    "duration": 3.007,
+    "scene_in": 4.59,
+    "narr_start": 5.193,
+    "narr_end": 8.2,
+    "scene_out": 8.7
+  },
+  {
+    "name": "s3_solution",
+    "text": "Jorr Counter watches you through your camera, and counts every rep for you. Hands free.",
+    "path": "/home/user/OpenMontage/projects/every-jorr-counts/assets/audio/s3_solution.wav",
+    "duration": 5.002,
+    "scene_in": 8.7,
+    "narr_start": 9.3,
+    "narr_end": 14.302,
+    "scene_out": 14.8
+  },
+  {
+    "name": "s4_features",
+    "text": "Track your sets, take timed breaks, and share your scorecard with the khana.",
+    "path": "/home/user/OpenMontage/projects/every-jorr-counts/assets/audio/s4_features.wav",
+    "duration": 4.296,
+    "scene_in": 14.8,
+    "narr_start": 15.402,
+    "narr_end": 19.698,
+    "scene_out": 20.2
+  },
+  {
+    "name": "s5_stat",
+    "text": "No taps. No wearables. Just you, and your jorr.",
+    "path": "/home/user/OpenMontage/projects/every-jorr-counts/assets/audio/s5_stat.wav",
+    "duration": 4.187,
+    "scene_in": 20.2,
+    "narr_start": 20.798,
+    "narr_end": 24.985,
+    "scene_out": 25.49
+  },
+  {
+    "name": "s6_cta",
+    "text": "Desi Jorr Khana. Open it in your browser, and start counting.",
+    "path": "/home/user/OpenMontage/projects/every-jorr-counts/assets/audio/s6_cta.wav",
+    "duration": 3.876,
+    "scene_in": 25.49,
+    "narr_start": 26.085,
+    "narr_end": 29.961,
+    "scene_out": 31.76
+  }
+]
